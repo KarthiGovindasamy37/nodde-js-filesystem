@@ -9,7 +9,8 @@ app.post("/createfile",function(req,res){
     let minutes = timeStamp.getMinutes()
     let seconds = timeStamp.getSeconds()
     let dateTime = `${date} - ${hours}:${minutes}:${seconds}`
-   fs.writeFile(`./newfile/${date}.txt`,`${dateTime}`,function(err){
+    let timestamp=Date.now()
+   fs.writeFile(`./newfile/${dateTime}.txt`,`${timestamp}`,function(err){
     if(err) throw err
     res.json({message:"file created"})
    })
