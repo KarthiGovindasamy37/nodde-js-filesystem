@@ -17,7 +17,7 @@ app.post("/createfile",function(req,res){
 })
 
 
-app.post("/readfile",function(req,res){
+app.get("/readfile",function(req,res){
     fs.readdir("newfile",function(err,files){
         if(err) throw err
         res.json({files})
